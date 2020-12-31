@@ -17,10 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from accounts.views import index
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('accounts.urls')),
     path('api/', include('plants.urls')),
-    url(r'^', index, name='index'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
+        static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns+url(r'^', index, name='index'),
