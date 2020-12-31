@@ -4,7 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '5%*z=r2n$r)u)oh%titc7mm%r@kv65!g9-8ns2n*1_$!@vte(5'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -114,6 +114,7 @@ MEDIA_URL = '/media/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "Static",
 # ]
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / "static"
 MEDIA_ROOT = BASE_DIR / "media"
 # MEDIA_ROOT = "d:/Workspace/projects/Nursery/media"
