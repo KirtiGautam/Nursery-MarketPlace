@@ -6,7 +6,7 @@ SECRET_KEY = '5%*z=r2n$r)u)oh%titc7mm%r@kv65!g9-8ns2n*1_$!@vte(5'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 INSTALLED_APPS = [
@@ -61,8 +61,12 @@ WSGI_APPLICATION = 'Nursery.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "d13r2ifomsgchd",
+        'HOST': "ec2-52-200-16-99.compute-1.amazonaws.com",
+        'PORT': "5432",
+        'USER': "dvnhneegjnjibj",
+        'PASSWORD': "c20729d4a2fc76aecc6044ed231d26c368435d4c5a38ee20c81f0900e8c26b76",
     }
 }
 
@@ -108,5 +112,6 @@ MEDIA_URL = '/media/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "Static",
 # ]
-STATIC_ROOT = BASE_DIR / "Static"
+STATIC_ROOT = BASE_DIR / "static"
+MEDIA_ROOT = BASE_DIR / "media"
 # MEDIA_ROOT = "d:/Workspace/projects/Nursery/media"
