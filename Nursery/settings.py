@@ -105,8 +105,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATICFILES_DIRS = [
-    BASE_DIR / "Static",
-]
-STATIC_ROOT = 'd:/stat'
-MEDIA_ROOT = "d:/Workspace/projects/Nursery/media"
+# STATICFILES_DIRS = [
+#     BASE_DIR / "Static",
+# ]
+STATIC_ROOT = BASE_DIR / "Static"
+# MEDIA_ROOT = "d:/Workspace/projects/Nursery/media"
