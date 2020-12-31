@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         response = super().to_representation(instance)
         if instance.is_staff:
-            response['nursery_name'] = instance.Nursery.name
+            response['nursery_name'] = instance.Nursery.nursery_name
         return response
 
 

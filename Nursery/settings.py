@@ -22,6 +22,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'accounts',
+    'plants',
 ]
 
 MIDDLEWARE = [
@@ -102,7 +103,10 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [
+    BASE_DIR / "Static",
+]
+STATIC_ROOT = 'd:/stat'
+MEDIA_ROOT = "d:/Workspace/projects/Nursery/media"

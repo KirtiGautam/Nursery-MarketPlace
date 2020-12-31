@@ -25,4 +25,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Nursery(models.Model):
     user = models.OneToOneField(
         User, related_name='Nursery', on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
+    nursery_name = models.CharField(max_length=100)

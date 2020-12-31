@@ -6,6 +6,10 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from accounts.models import (User, Nursery)
 from accounts.serializers import (UserSerializer)
+from django.shortcuts import render, redirect
+
+def index(request):
+    return redirect('https://documenter.getpostman.com/view/11572058/TVt1A5no')
 
 
 @api_view(['POST'])
@@ -42,9 +46,11 @@ def nurserySignup(request):
         user.set_password(request.POST['password'])
         user.save()
         nursery = Nursery.objects.create(
-            user=user, name=request.POST['nursery_name'])
+            user=user, nursery_name=request.POST['nursery_name'])
         return Response({'message': "Successfully registered", "user": UserSerializer(user).data, "token": Token.objects.create(user=user).key}, status=status.HTTP_200_OK)
     except Exception as e:
+        if user:
+            user.delete()
         return Response({'message': e.args}, status=status.HTTP_400_BAD_REQUEST)
 
 
